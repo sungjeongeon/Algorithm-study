@@ -18,6 +18,7 @@ public class Baekjoon_1722_순열의순서 {
             f[i] = f[i-1]*i;
         }
         
+        
         int n = sc.nextInt();
         int what = sc.nextInt();
         
