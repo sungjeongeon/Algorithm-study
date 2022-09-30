@@ -58,7 +58,7 @@ public class swea_1953_탈주범검거_size {
 		q.offer(new Point(x,y, time));
 		ans++;
 		
-		end:while(!q.isEmpty()) {
+		while(!q.isEmpty()) {
 			int size = q.size();
 			for(int s=0; s<size; s++) {
 				Point cur = q.poll();
