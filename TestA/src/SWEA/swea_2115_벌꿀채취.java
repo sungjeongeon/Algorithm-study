@@ -27,7 +27,7 @@ public class swea_2115_벌꿀채취 {
 			}
 			
 			for(int i=0; i<N; i++) {
-				for(int j=0; j<N-M; j++) {
+				for(int j=0; j<N; j++) {
 					int arr[] = new int[M];
 					int sum = 0;
 					for(int k=0; k<M; k++) {
