@@ -59,8 +59,8 @@ public class swea_1953_탈주범검거_size {
 		ans++;
 		
 		while(!q.isEmpty()) {
-			int size = q.size();
-			for(int s=0; s<size; s++) {
+			//int size = q.size();
+			//for(int s=0; s<size; s++) {
 				Point cur = q.poll();
 				
 				if(cur.time == L) break;
@@ -76,13 +76,13 @@ public class swea_1953_탈주범검거_size {
 					
 					if(map[nx][ny] != 0 && !v[nx][ny] && type[map[nx][ny]].contains(Integer.toString(3-d))) {
 						v[nx][ny] = true;
-						q.offer(new Point(nx,ny, time+1));
+						q.offer(new Point(nx,ny, cur.time+1));
 						ans++;
 					}
 				}
 			}
-			time++;
-		}
+			//time++;
+		//}
 		return ans;
 	}
 	
