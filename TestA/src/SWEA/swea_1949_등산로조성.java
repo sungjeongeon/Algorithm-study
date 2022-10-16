@@ -10,8 +10,8 @@ public class swea_1949_등산로조성 {
 	static int maxLength;
 	static int map[][];
 	static boolean visited[][];
-	static int dx[] = {-1, 0, 1, 0}; //상,우,하,좌
-	static int dy[] = {0, 1, 0, -1}; //상,우,하,좌
+	static int[] dx = { 0, -1, 0, 1 };
+    static int[] dy = { -1, 0, 1, 0 };
 	public static void main(String[] args) throws IOException {
 		System.setIn(new FileInputStream("res/input_swea_1949.txt"));
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -55,7 +55,7 @@ public class swea_1949_등산로조성 {
 	private static void dfs(Point start, int length, boolean isK) {
 		if (length > maxLength) maxLength = length;
 		
-		visited[start.x][start.y] = true;
+		//visited[start.x][start.y] = true;
 		
 		for(int d=0; d<4; d++) {
 			int nx = start.x + dx[d];
@@ -64,14 +64,17 @@ public class swea_1949_등산로조성 {
 			if(nx<0 || nx>=N || ny<0 || ny>= N || visited[nx][ny]) continue;
 			
 			visited[nx][ny] = true;
+			
 			if(map[nx][ny] < start.height) {
+				//System.out.println(map[nx][ny]);
 				dfs(new Point(nx,ny,map[nx][ny]), length+1, isK);
+				
 			} else if (!isK && map[nx][ny] - start.height < K){
 				dfs(new Point(nx,ny,start.height-1), length+1, true);
 			}
 			visited[nx][ny] = false;
 		}
-		visited[start.x][start.y] = false;
+		//visited[start.x][start.y] = false;
 	}
 
 	static class Point{
