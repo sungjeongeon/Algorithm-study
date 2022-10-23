@@ -56,8 +56,8 @@ public class BOJ_2629_양팔저울 {
 		if (n == chuNum)
 			return;
 
-		dp(n + 1, weight + chu[n]); // 현재 무게를 더하는 경우
 		dp(n + 1, weight); // 더하지 않는 경우
+		dp(n + 1, weight + chu[n]); // 현재 무게를 더하는 경우
 		dp(n + 1, (weight < chu[n]) ? chu[n] - weight : weight - chu[n]);
 	}
 }
