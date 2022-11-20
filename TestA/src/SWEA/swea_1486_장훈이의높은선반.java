@@ -11,9 +11,7 @@ public class swea_1486_장훈이의높은선반 {
 	static boolean isSelected[];
 	static int ans;
 	public static void main(String[] args) throws IOException {
-		//System.setIn(new FileInputStream("input.txt"));
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-				
 		int T = Integer.parseInt(br.readLine());
 		for(int tc=1; tc<=T; tc++) {
 			String split[] = br.readLine().split(" ");
